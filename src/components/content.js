@@ -2,24 +2,31 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Content() {
+    // main states for site functionality
     const [AccountInfo, setAccountInfo] = useState('');
-
     const [emailCount, setEmailCount] = useState('');
-    const [userDomain, setUserDomain] = useState('');
-
     const [emailVerifier, setEmailVerifier] = useState('');
-    const [userEmail, setUserEmail] = useState('');
-
     const [emailFinder, setEmailFinder] = useState('');
-    const [domain, setDomain] = useState('');
+    const [domainSearch, setDomainSearch] = useState('');
+
+    const [userDomain, setUserDomain] = useState('');
+    const [userEmail, setUserEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
-    const [domainSearch, setDomainSearch] = useState('');
-    const [company, setCompany] = useState('');
+    //API KEY
+    const KEY = 'ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e';
 
+    // useEffect(() => {
+    //     axios.get(`https://api.hunter.io/v2/account?api_key=${KEY}`)
+    //       .then((response) => {
+    //         set;
+    //       })
+    //   }, []);
+
+    //Account Information API Call
     const getAccountInfo = () => {
-        axios.get(`https://api.hunter.io/v2/account?api_key=ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e`)
+        axios.get(`https://api.hunter.io/v2/account?api_key=${KEY}`)
             .then((response) => {
                 // console.log(response.data.data);
                 const { searches, verifications } = response.data.data.requests;
@@ -35,6 +42,7 @@ function Content() {
         );
     };
   
+    //Email Count API Call
     const getEmailCount = () => {
         axios.get(`https://api.hunter.io/v2/email-count?domain=${userDomain}`)
             .then((response) => { 
@@ -51,8 +59,9 @@ function Content() {
         );
     };
 
+    //Email Verifier API Call
     const getEmailVerifier = () => {
-        axios.get(`https://api.hunter.io/v2/email-verifier?email=${userEmail}&api_key=ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e`)
+        axios.get(`https://api.hunter.io/v2/email-verifier?email=${userEmail}&api_key=${KEY}`)
             .then((response) => {
                 //console.log(response.data);
                 const emailVerify = response.data.data;
@@ -68,9 +77,10 @@ function Content() {
         );
     };
 
+    //Email Finder API Call
     const getEmailFinder = (e) => {
         e.preventDefault()
-        axios.get(`https://api.hunter.io/v2/email-finder?domain=${domain}&first_name=${firstName}&last_name=${lastName}&api_key=ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e`)
+        axios.get(`https://api.hunter.io/v2/email-finder?domain=${userDomain}&first_name=${firstName}&last_name=${lastName}&api_key=${KEY}`)
             .then((response) => {
                 //console.log(response.data);
                 const emailFinder = response.data.data;
@@ -87,18 +97,20 @@ function Content() {
         );
     };
 
+    //Domain Search API Call
     const getDomainSearch = () => {
-        axios.get(`https://api.hunter.io/v2/domain-search?domain=${company}&api_key=ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e`)
+        axios.get(`https://api.hunter.io/v2/domain-search?domain=${userDomain}&api_key=${KEY}`)
             .then((response) => {
-                console.log(response.data);
+                //console.log(response.data);
                 // const { data, meta }  = response.data;
                 const domainSearch = response.data.data;
                 const domain = domainSearch.domain;
                 const organization = domainSearch.organization;
                 const industry = domainSearch.industry;
-                const technologies = domainSearch.technologies;
 
-                setDomainSearch(`Domain: ${domain}, Organization: ${organization}, Industry: ${industry}, Technologies: ${technologies}`);
+                //let email = 
+
+                setDomainSearch(`Domain: ${domain}, Organization: ${organization}, Industry: ${industry}`);
             }
         );
     };
@@ -134,8 +146,8 @@ function Content() {
                 <input
                     type='text'
                     placeholder='Domain'
-                    value={domain}
-                    onChange={(e) => setDomain(e.target.value)}
+                    value={userDomain}
+                    onChange={(e) => setUserDomain(e.target.value)}
                 />
                 <input
                     type='text'
@@ -157,8 +169,8 @@ function Content() {
             <input
                 type='text'
                 placeholder='Domain'
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
+                value={userDomain}
+                onChange={(e) => setUserDomain(e.target.value)}
             />
             <button onClick={getDomainSearch}>Email Count</button>
             <div>{domainSearch}</div>
