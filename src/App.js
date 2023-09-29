@@ -1,13 +1,10 @@
-import Hero from './components/hero';
-import Content from './components/content';
-// import About from './components/about';
-// import Footer from './components/footer';
+import Options from './components/options';
+
 function App() {
 
   return (
     <div className="App">
-      <Hero />
-      <Content />
+      <Options />
     </div>
   );
 }
