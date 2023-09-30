@@ -37,7 +37,7 @@ function EmailFinder() {
           <h1>Email Finder</h1>
         </div>
         <div className="container-text">
-          <p>random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here</p>
+          <p>Find valuable information across the web by combining the search parameters of a person's name and their associated domain. Effortlessly expand your professional network by swiftly accessing contact details of industry peers or potential collaborators.</p>
         </div>
         <form onSubmit={getEmailFinder}>
           <input

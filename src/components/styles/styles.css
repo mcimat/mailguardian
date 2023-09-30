@@ -74,17 +74,14 @@ h1 {
 }
 
 .container-input {
-  display: flex;
-  justify-content: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: 1.25rem;
-}
-
-.container-input input {
-  width: 50%;
-  border: none; 
-  outline: none; 
+  position: relative;
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+  width: 100%;
 }
 
 .container-button {

@@ -29,17 +29,19 @@ function EmailCount() {
           <h1>Email Count</h1>
         </div>
         <div className="container-text">
-          <p>random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here</p>
+          <p>Access the quantity of email addresses identified within a designated website domain effortlessly. Our tool offers a seamless and secure experience, available to you without any limitations, and it operates independently from your search and verification quotas, ensuring your usage remains unaffected.</p>
         </div>
-        <input
-          type="text"
-          placeholder="Domain"
-          className="container-input"
-          value={userDomain}
-          onChange={(e) => setUserDomain(e.target.value)}
-        />
-        <button className="container-button" onClick={getEmailCount}>Email Count</button>
-        <div className="container-result">{emailCount}</div>
+        <div className="container-parameters">
+          <input
+            type="text"
+            placeholder="Domain"
+            className="container-input"
+            value={userDomain}
+            onChange={(e) => setUserDomain(e.target.value)}
+          />
+          <button className="container-button" onClick={getEmailCount}>Email Count</button>
+          <div className="container-result">{emailCount}</div>
+        </div>
       </div>
     </section>
   );

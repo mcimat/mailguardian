@@ -34,7 +34,7 @@ function DomainSearch() {
           <h1>Domain Search</h1>
         </div>
         <div className="container-text">
-          <p>random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here</p>
+          <p>Recieve the first 10 emails of a domain.</p>
         </div>
         <input
           type="text"

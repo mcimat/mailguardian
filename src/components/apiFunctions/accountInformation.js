@@ -37,7 +37,7 @@ function AccountInformation() {
           <h1>Account Information</h1>
         </div>
         <div className="container-text">
-          <p>random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here</p>
+          <p>Check the current allocation of monthly Searches and Verifications available for this account. Please note that this allocation resets every month.</p>
         </div>
         <div className="container-result">{AccountInformation}</div>
         <button className="container-button" onClick={getAccountInformation}>Refresh</button>

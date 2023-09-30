@@ -33,7 +33,7 @@ function EmailVerifier() {
           <h1>Email Verifier</h1>
         </div>
         <div className="container-text">
-          <p>random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here random text here</p>
+          <p>Have you ever found yourself questioning the authenticity of an email address? With an email verifier at your disposal, you can eliminate any doubts of an unknown emails validity.</p>
         </div>
         <input
           tpye="text"
