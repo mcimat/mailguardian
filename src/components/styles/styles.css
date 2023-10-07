@@ -94,4 +94,12 @@ h1 {
   border-radius: .5rem;
   cursor: pointer;
   color: white;
+  margin: 1rem 0;
+}
+
+.container-list {
+  list-style: none;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }

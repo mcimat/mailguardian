@@ -9,7 +9,6 @@ function EmailCount() {
   const getEmailCount = () => {
     axios.get(`https://api.hunter.io/v2/email-count?domain=${userDomain}`)
       .then((response) => {
-        //console.log(response.data);
         const emailCount = response.data.data;
         const total = emailCount.total;
 

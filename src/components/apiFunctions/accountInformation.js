@@ -16,7 +16,6 @@ function AccountInformation() {
   const getAccountInformation = () => {
     axios.get(`https://api.hunter.io/v2/account?api_key=${KEY}`)
       .then((response) => {
-        // console.log(response.data.data);
         const { searches, verifications } = response.data.data.requests;
         const searchesUsed = searches.used;
         const searchesAvailable = searches.available;
