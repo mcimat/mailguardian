@@ -6,17 +6,32 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
-  background-image: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+  background-image: linear-gradient(25deg, #d64c7f, #ee4758 50%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-size: 2.25rem;
 }
 
+.error-text {
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #ee4758;
+}
+
 .container {
   line-height: 1.4;
-  padding: 0 2.5rem;
+  padding: 1rem 2.5rem;
   text-align: center;
   max-width: 100rem !important;
 }
@@ -36,15 +51,11 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .button-list button:hover {
-  color: #C41E3A;
-}
-
-.button-list button.active {
-  color: #C41E3A;
+  color: #ee4758;
 }
 
 .container-title {
@@ -58,16 +69,14 @@ h1 {
 }
 
 .container-text {
-  font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 1.25rem;
-  color: #353935	;
+  font-size: 1.125rem;
+  color: #353935;
   line-height: 1.6;
   margin: 1rem 0;
 }
 
 .container-result {
-  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 1.125rem;
   color: #353935;
@@ -85,10 +94,9 @@ h1 {
 }
 
 .container-button {
-  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 1.125rem;
-  background-image: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+  background-image: linear-gradient(25deg, #d64c7f, #ee4758 50%);
   padding: 1rem;
   border: none;
   border-radius: .5rem;
@@ -97,9 +105,16 @@ h1 {
   margin: 1rem 0;
 }
 
-.container-list {
+.container-li {
   list-style: none;
   padding: 1rem;
-  font-family: 'Roboto', sans-serif;
   font-weight: 300;
+}
+
+.container-ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

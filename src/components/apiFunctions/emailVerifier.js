@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/styles.css";
 
 function EmailVerifier() {
+  const [error, setError] = useState(null);
   const [emailVerifier, setEmailVerifier] = useState("");
   const [userEmail, setUserEmail] = useState("");
 
@@ -22,8 +23,10 @@ function EmailVerifier() {
         setEmailVerifier(`Status: ${status}, result: ${result}, Score: ${score}`
           + " " +
           `Entered email: ${email}`);
-      }
-    );
+      })
+      .catch((error) => {
+        setError("Please enter an email address to verify.");
+      });
   };
 
   return (
@@ -43,6 +46,7 @@ function EmailVerifier() {
           onChange={(e) => setUserEmail(e.target.value)}
         />
         <button className="container-button" onClick={getEmailVerifier}>Verify Email</button>
+        {<p className="error-text">{error}</p>}
         <div className="container-result">{emailVerifier}</div>
       </div>
     </section>

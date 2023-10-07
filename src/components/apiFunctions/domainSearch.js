@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/styles.css";
 
 function DomainSearch() {
+  const [error, setError] = useState(null);
   const [domainSearch, setDomainSearch] = useState("");
   const [userDomain, setUserDomain] = useState("");
   const [emailData, setEmailData] = useState({ emails: [] });
@@ -16,7 +17,6 @@ function DomainSearch() {
       .then((response) => {
         const emailData = response.data.data.emails;
         setEmailData({ emails: emailData });
-        console.log(emailData);
 
         const domainSearch = response.data.data;
         const organization = domainSearch.organization;
@@ -34,8 +34,10 @@ function DomainSearch() {
         const youtube = domainSearch.youtube;
 
         setDomainSearch(`Organization: ${organization}, Industry: ${industry}, Address: ${street}, ${state}, ${postalCode}, Facebook: ${facebook}, Instagram: ${instagram}, Twitter: ${twitter}, YouTube: ${youtube}`);
-      }
-    );
+      })
+      .catch((error) => {
+        setError("Please enter a domain.");
+      });
   };
 
   return (
@@ -55,11 +57,12 @@ function DomainSearch() {
           onChange={(e) => setUserDomain(e.target.value)}
         />
         <button className="container-button" onClick={getDomainSearch}>Email Count</button>
+        {<p className="error-text">{error}</p>}
         <div className="container-result">{domainSearch}</div>
-        <ul>
+        <ul className="container-ul">
           {Array.isArray(emailData.emails) && emailData.emails.map((email, index) => {
             return (
-              <li className="container-list" key={index}>
+              <li className="container-li" key={index}>
                 <span>
                   <p>Email: {email.value}</p>
                   <p>Name: {email.first_name} {email.last_name}</p>

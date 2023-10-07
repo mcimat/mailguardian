@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/styles.css";
 
 function AccountInformation() {
+  const [error, setError] = useState(null);
   const [AccountInformation, setAccountInformation] = useState("");
 
   //API KEY
@@ -25,8 +26,10 @@ function AccountInformation() {
         setAccountInformation(`Searches-- Used: ${searchesUsed}, Available: ${searchesAvailable}`
           + " " +
           `Verifications-- Used: ${verificationsUsed}, Available: ${verificationsAvailable}`);
-      }
-    );
+      })
+      .catch((error) => {
+        setError("We are currently running into technical issues. Please try again later.")
+      });
   };
 
   return (
@@ -36,10 +39,11 @@ function AccountInformation() {
           <h1>Account Information</h1>
         </div>
         <div className="container-text">
-          <p>Check the current allocation of monthly Searches and Verifications available for this account. Please note that this allocation resets every month.</p>
+          <p>Take a moment to examine the present allocation of monthly Searches and Verifications accessible for your account. It's important to be aware that this allocation is renewed each month, ensuring that you consistently have a refreshed quota of Searches and Verifications at your disposal to meet your needs and objectives.</p>
         </div>
         <div className="container-result">{AccountInformation}</div>
         <button className="container-button" onClick={getAccountInformation}>Refresh</button>
+        {<p className="error-text">{error}</p>}
       </div>
     </section>
   );

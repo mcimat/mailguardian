@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function EmailCount() {
+  const [error, setError] = useState(null);
   const [emailCount, setEmailCount] = useState("");
   const [userDomain, setUserDomain] = useState("");
 
@@ -17,8 +18,10 @@ function EmailCount() {
         setEmailCount(`Total emails: ${total}`
           + " " +
           `Searched Site: ${domain}`);
-      }
-    );
+      })
+      .catch((error) => {
+        setError("Please enter a domain.");
+      });
   };
 
   return (
@@ -39,6 +42,7 @@ function EmailCount() {
             onChange={(e) => setUserDomain(e.target.value)}
           />
           <button className="container-button" onClick={getEmailCount}>Email Count</button>
+          {<p className="error-text">{error}</p>}
           <div className="container-result">{emailCount}</div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/styles.css";
 
 function EmailFinder() {
+  const [error, setError] = useState(null);
   const [emailFinder, setEmailFinder] = useState("");
   const [userDomain, setUserDomain] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -26,8 +27,10 @@ function EmailFinder() {
         setEmailFinder(`Email found: ${email}, Company: ${company}, Position: ${position}`
           + " " +
           `First: ${first}, Last: ${last}`);
-      }
-    );
+      })
+    .catch((error) => {
+      setError("Please enter a domain, first name and last name.");
+    });
   };
 
   return (
@@ -63,6 +66,7 @@ function EmailFinder() {
           />
           <button className="container-button" type="submit">Find Email</button>
         </form>
+        {<p className="error-text">{error}</p>}
         <div className="container-result">{emailFinder}</div>
       </div>
     </section>
