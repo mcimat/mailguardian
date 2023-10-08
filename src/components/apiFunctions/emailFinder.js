@@ -37,7 +37,7 @@ function EmailFinder() {
     <section>
       <div className="container">
         <div className="container-title">
-          <h1>Email Finder</h1>
+          <h1 className="h1-color">Email Finder</h1>
         </div>
         <div className="container-text">
           <p>Find valuable information across the web by combining the search parameters of a person's name and their associated domain. Effortlessly expand your professional network by swiftly accessing contact details of industry peers or potential collaborators.</p>

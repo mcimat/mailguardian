@@ -33,7 +33,7 @@ function EmailVerifier() {
     <section>
       <div className="container">
         <div className="container-title">
-          <h1>Email Verifier</h1>
+          <h1 className="h1-color">Email Verifier</h1>
         </div>
         <div className="container-text">
           <p>Have you ever found yourself questioning the authenticity of an email address? With an email verifier at your disposal, you can eliminate any doubts of an unknown emails validity.</p>

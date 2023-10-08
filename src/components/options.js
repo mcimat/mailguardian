@@ -7,7 +7,7 @@ import DomainSearch from './apiFunctions/domainSearch';
 import "./styles/styles.css";
 
 function Options() {
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState(1);
 
   const buttonsData = [
     { id: 1, text: 'Account Information', content: <AccountInformation /> },

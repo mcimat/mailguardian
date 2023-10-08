@@ -44,7 +44,7 @@ function DomainSearch() {
     <section>
       <div className="container">
         <div className="container-title">
-          <h1>Domain Search</h1>
+          <h1 className="h1-color">Domain Search</h1>
         </div>
         <div className="container-text">
           <p>Explore any domain to access information, including details about the company's social media presence, key industry insights, and physical address. Additionally, retrieve the first 10 email addresses associated with the domain.</p>
@@ -64,9 +64,9 @@ function DomainSearch() {
             return (
               <li className="container-li" key={index}>
                 <span>
-                  <p>Email: {email.value}</p>
-                  <p>Name: {email.first_name} {email.last_name}</p>
-                  <p>Confidence: {email.confidence}</p>
+                  <p className="container-result">Email: {email.value}</p>
+                  <p className="container-result">Name: {email.first_name} {email.last_name}</p>
+                  <p className="container-result">Confidence: {email.confidence}</p>
                 </span>
               </li>
             );

@@ -28,7 +28,7 @@ function EmailCount() {
     <section>
       <div className="container">
         <div className="container-title">
-          <h1>Email Count</h1>
+          <h1 className="h1-color">Email Count</h1>
         </div>
         <div className="container-text">
           <p>Access the quantity of email addresses identified within a designated website domain effortlessly. Our tool offers a seamless and secure experience, available to you without any limitations, and it operates independently from your search and verification quotas, ensuring your usage remains unaffected.</p>

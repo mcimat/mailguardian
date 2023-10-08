@@ -1,12 +1,12 @@
 import Options from './components/options';
-// import About from './components/about';
+import Questions from './components/questions';
 
 function App() {
 
   return (
     <div className="App">
       <Options />
-      {/* <About /> */}
+      <Questions />
     </div>
   );
 }
