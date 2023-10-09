@@ -29,6 +29,8 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  line-height: 1.6;
+  margin: 1rem 0;
 }
 
 .error-text {
@@ -125,4 +127,11 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.container-questions {
+  display: grid;
+  grid: auto / auto auto;
+  place-items: center;
+  gap: 2rem;
 }
