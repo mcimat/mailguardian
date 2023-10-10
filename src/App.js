@@ -1,5 +1,6 @@
 import Options from './components/options';
 import Questions from './components/questions';
+import Footer from './components/footer';
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Options />
       <Questions />
+      <Footer />
     </div>
   );
 }

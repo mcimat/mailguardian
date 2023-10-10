@@ -28,9 +28,17 @@ h1 {
 }
 
 h2 {
+  color: #212529;
   font-size: 2rem;
   line-height: 1.6;
   margin: 1rem 0;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #696969;
+  margin: 1rem 0;
+  text-transform: uppercase;
 }
 
 .error-text {
@@ -79,7 +87,7 @@ h2 {
 }
 
 .container-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.125rem;
   color: #353935;
   line-height: 1.6;
@@ -87,7 +95,7 @@ h2 {
 }
 
 .container-result {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.125rem;
   color: #353935;
 }
@@ -134,4 +142,39 @@ h2 {
   grid: auto / auto auto;
   place-items: center;
   gap: 2rem;
+}
+
+.questions-content {  
+  text-align: left;
+}
+
+.container-footer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto;
+}
+
+/* still thinking of what should be added here */
+.footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: auto;
+}
+
+.footer-content {
+  text-align: left;
+  padding: 2rem;
+  list-style: none;
+  transition: color 0.3s ease;
+}
+
+.footer-content li {
+  margin: .5rem 0;
+  cursor: pointer;
+}
+
+.footer-content li:hover {
+  color: #ee4758;
 }
