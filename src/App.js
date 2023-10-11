@@ -1,5 +1,5 @@
 import Options from './components/options';
-import Questions from './components/questions';
+// import Questions from './components/questions';
 import Footer from './components/footer';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Options />
-      <Questions />
+      {/* <Questions /> */}
       <Footer />
     </div>
   );
