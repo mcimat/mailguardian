@@ -32,7 +32,7 @@ function EmailVerifier() {
           <h1>Email Verifier</h1>
         </div>
         <div className="container-text">
-          <p>Verify an email.</p>
+          <p>Validate an email. Anytime, anywhere</p>
         </div>
         <input
           tpye="text"

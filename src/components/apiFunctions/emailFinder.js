@@ -24,7 +24,7 @@ function EmailFinder() {
         const first = emailFinder.first_name;
         const last = emailFinder.last_name;
 
-        setEmailFinder(`Email found: ${email}, Company: ${company}, Position: ${position}`
+        setEmailFinder(`Email Found: ${email}, Company: ${company}, Position: ${position}`
           + " " +
           `First: ${first}, Last: ${last}`);
       })
@@ -40,7 +40,7 @@ function EmailFinder() {
           <h1 className="h1-color">Email Finder</h1>
         </div>
         <div className="container-text">
-          <p>Find valuable information across the web by combining the search parameters of a person's name and their associated domain. Effortlessly expand your professional network by swiftly accessing contact details of industry peers or potential collaborators.</p>
+          <p>Find any email. Anywhere</p>
         </div>
         <form onSubmit={getEmailFinder}>
           <input

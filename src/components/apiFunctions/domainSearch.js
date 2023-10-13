@@ -47,7 +47,7 @@ function DomainSearch() {
           <h1 className="h1-color">Domain Search</h1>
         </div>
         <div className="container-text">
-          <p>Explore any domain to access information, including details about the company's social media presence, key industry insights, and physical address. Additionally, retrieve the first 10 email addresses associated with the domain.</p>
+          <p>Search any company.</p>
         </div>
         <input
           type="text"
@@ -56,7 +56,7 @@ function DomainSearch() {
           value={userDomain}
           onChange={(e) => setUserDomain(e.target.value)}
         />
-        <button className="container-button" onClick={getDomainSearch}>Email Count</button>
+        <button className="container-button" onClick={getDomainSearch}>Search</button>
         {<p className="error-text">{error}</p>}
         <div className="container-result">{domainSearch}</div>
         <ul className="container-ul">

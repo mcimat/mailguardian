@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import AccountInformation from './apiFunctions/accountInformation';
-import EmailCount from './apiFunctions/emailCount';
+// import AccountInformation from './apiFunctions/accountInformation';
+// import EmailCount from './apiFunctions/emailCount';
 import EmailVerifier from './apiFunctions/emailVerifier';
 import EmailFinder from './apiFunctions/emailFinder';
 import DomainSearch from './apiFunctions/domainSearch';
@@ -10,11 +10,11 @@ function Options() {
   const [activeButton, setActiveButton] = useState(1);
 
   const buttonsData = [
-    { id: 1, text: 'Account Information', content: <AccountInformation /> },
-    { id: 2, text: 'Email Count', content: <EmailCount /> },
-    { id: 3, text: 'Email Verifier', content: <EmailVerifier /> },
-    { id: 4, text: 'Email Finder', content: <EmailFinder /> },
-    { id: 5, text: 'Domain Search', content: <DomainSearch /> }
+    // { id: 1, text: 'Account Information', content: <AccountInformation /> },
+    // { id: 1, text: 'Email Count', content: <EmailCount /> },
+    { id: 1, text: 'Email Verifier', content: <EmailVerifier /> },
+    { id: 2, text: 'Email Finder', content: <EmailFinder /> },
+    { id: 3, text: 'Domain Search', content: <DomainSearch /> }
   ];
 
   const handleButtonClick = (buttonId) => {

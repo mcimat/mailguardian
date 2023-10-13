@@ -49,10 +49,10 @@ function AccountInformation() {
         </div>
         <div className="container-info">
           <p>This tool is beneficial for viewing how many requests are available for both searches and verifications. Clicking the refresh button under the Account Information tab will not count as a request for either searches or verifications.</p>
-          
+
           <h3>Is there a limit on the number of email searches/verifications I can perform a day?</h3>
           <p>There are no restrictions on the number of searches or verifications you can perform in a single day.</p>
-          
+
           <h3>What happens if I exceed the limit of email address searches or verifications?</h3>
           <p>If the limit is exceeded, you won't be able to utilize that particular service until the start of the new month when the request limit resets.</p>
 
