@@ -49,14 +49,18 @@ function DomainSearch() {
         <div className="container-text">
           <p>Search any company.</p>
         </div>
-        <input
-          type="text"
-          placeholder="Domain"
-          className="container-input"
-          value={userDomain}
-          onChange={(e) => setUserDomain(e.target.value)}
-        />
-        <button className="container-button" onClick={getDomainSearch}>Search</button>
+        <form className="form" onSumbit={getDomainSearch}>
+          <div className="form-title">
+            <p>Discover emails from the company.</p>
+          </div>
+          <input
+            placeholder="Company.com"
+            className="form-input"
+            value={userDomain}
+            onChange={(e) => setUserDomain(e.target.value)}
+          />
+          <button className="form-submit">Search</button>
+        </form>
         {<p className="error-text">{error}</p>}
         <div className="container-result">{domainSearch}</div>
         <ul className="container-ul">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import findImage from "../images/find.png"
 import "../styles/styles.css";
 
 function EmailFinder() {
@@ -36,39 +37,42 @@ function EmailFinder() {
   return (
     <section>
       <div className="container">
+        <div className="container-image">
+          <img src={findImage} alt="Find Img" />
+        </div>
         <div className="container-title">
           <h1 className="h1-color">Email Finder</h1>
         </div>
         <div className="container-text">
-          <p>Find any email. Anywhere</p>
+          <p>Find any email.</p>
         </div>
-        <form onSubmit={getEmailFinder}>
-          <input
-            type="text"
-            placeholder="Domain"
-            className="container-input"
-            value={userDomain}
-            onChange={(e) => setUserDomain(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="First Name"
-            className="container-input"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Last Name"
-            className="container-input"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <button className="container-button" type="submit">Find Email</button>
-        </form>
+          <form className="form" onSubmit={getEmailFinder}>
+            <p class="form-title">Track down that email you've been hunting for.</p>
+              <input
+                placeholder="Company.com"
+                class="form-input"
+                value={userDomain}
+                onChange={(e) => setUserDomain(e.target.value)}
+              />
+              <br />
+              <input
+                placeholder="First Name"
+                class="form-input"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+              <br />
+              <input
+                placeholder="Last Name"
+                class="form-input"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            <button type="submit" className="form-submit">Find Email</button>
+          </form>
+        </div>
         {<p className="error-text">{error}</p>}
         <div className="container-result">{emailFinder}</div>
-      </div>
     </section>
   );
 }

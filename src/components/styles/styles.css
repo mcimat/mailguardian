@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 /* General Content */
 * {
@@ -45,7 +45,6 @@ h4 {
   color: #ee4758;
 }
 
-
 /* Main Content */
 .container {
   line-height: 1.4;
@@ -80,21 +79,69 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 900;
   margin: .5rem 0;
 }
 
 .container-text {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.125rem;
   color: #353935;
   line-height: 1.6;
   margin: 1rem 0;
 }
 
+.form {
+  background-color: #fff;
+  display: block;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.form-input {
+  position: relative;
+}
+
+.form-input, .form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+.form-input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.form-submit {
+  display: block;
+  padding: 0.75rem;
+  background-color: #ee4758;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
 .container-result {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.125rem;
   color: #353935;
 }
@@ -104,7 +151,7 @@ h4 {
   text-align: left;
 }
 
-.container-input {
+/* .container-input {
   position: relative;
   font-size: 16px;
   padding: 10px 10px 10px 5px;
@@ -113,10 +160,10 @@ h4 {
   border-bottom: 1px solid #515151;
   background: transparent;
   width: 100%;
-}
+} */
 
-.container-button {
-  font-weight: 300;
+/* .container-button {
+  font-weight: 400;
   font-size: 1.125rem;
   background-image: linear-gradient(25deg, #d64c7f, #ee4758 50%);
   padding: 1rem;
@@ -125,12 +172,12 @@ h4 {
   cursor: pointer;
   color: white;
   margin: 1rem 0;
-}
+} */
 
 .container-li {
   list-style: none;
   padding: 1rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .container-ul {
@@ -141,13 +188,12 @@ h4 {
   align-items: center;
 }
 
-
 /* Questions Content */
 .questions-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 900;
   margin: .5rem 0;
   text-transform: uppercase;

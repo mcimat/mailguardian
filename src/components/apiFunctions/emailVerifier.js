@@ -34,14 +34,16 @@ function EmailVerifier() {
         <div className="container-text">
           <p>Verify an email.</p>
         </div>
-        <input
-          tpye="text"
-          placeholder="Email"
-          className="container-input"
-          value={userEmail}
-          onChange={(e) => setUserEmail(e.target.value)}
-        />
-        <button className="container-button" onClick={getEmailVerifier}>Verify Email</button>
+        <form className="form" onSubmit={getEmailVerifier}>
+          <p class="form-title">Uncover the validity of that email.</p>
+          <input
+            placeholder="Email"
+            className="form-input"
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
+          />
+          <button className="form-submit">Verify Email</button>
+        </form>
         <div className="container-result">{emailVerifier}</div>
       </div>
     </section>
