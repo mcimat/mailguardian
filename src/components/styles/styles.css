@@ -33,10 +33,26 @@ h3 {
 }
 
 h4 {
-  color: #696969;
   font-size: 1rem;
   margin: 1rem 0;
   text-transform: uppercase;
+}
+
+.container-sentence {
+  text-align: center;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+span, .span-color {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.span-color {
+  color: #ee4758;
 }
 
 .error-text {
@@ -93,7 +109,6 @@ h4 {
 }
 
 .form {
-  background-color: #fff;
   display: block;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -140,6 +155,21 @@ h4 {
   border-radius: 0.5rem;
 }
 
+.container-benefits {
+  display: grid;
+  place-items: center;
+  grid: auto / auto auto auto;
+  padding: 1rem;
+}
+
+.benefits-card {
+  background-color: #f5f5f7;
+  border: solid white;
+  border-radius: .5rem;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 .container-result {
   font-weight: 400;
   font-size: 1.125rem;
@@ -150,29 +180,6 @@ h4 {
   font-size: 1.125rem;
   text-align: left;
 }
-
-/* .container-input {
-  position: relative;
-  font-size: 16px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  border: none;
-  border-bottom: 1px solid #515151;
-  background: transparent;
-  width: 100%;
-} */
-
-/* .container-button {
-  font-weight: 400;
-  font-size: 1.125rem;
-  background-image: linear-gradient(25deg, #d64c7f, #ee4758 50%);
-  padding: 1rem;
-  border: none;
-  border-radius: .5rem;
-  cursor: pointer;
-  color: white;
-  margin: 1rem 0;
-} */
 
 .container-li {
   list-style: none;

@@ -46,6 +46,48 @@ function EmailVerifier() {
         </form>
         <div className="container-result">{emailVerifier}</div>
       </div>
+      <div className="container-sentence">
+        <span>We have validated over </span>
+        <span className="span-color">100,000 emails </span>
+        <span>for over </span>
+        <span className="span-color">25,000 users </span>
+        <span>in the past 8 months.</span>
+      </div>
+      <div className="container-benefits">
+        <div className="benefits-card">
+          <div className="card-image">
+            <p>TEST IMAGE</p>
+          </div>
+          <div className="card-title">
+            <h2>TEST TITLE</h2>
+          </div>
+          <div className="card-desc">
+            <p>TEST DesC</p>
+          </div>
+        </div>
+        <div className="benefits-card">
+          <div className="card-image">
+            <p>TEST IMAGE</p>
+          </div>
+          <div className="card-title">
+            <h2>TEST TITLE</h2>
+          </div>
+          <div className="card-desc">
+            <p>TEST DesC</p>
+          </div>
+        </div>
+        <div className="benefits-card">
+          <div className="card-image">
+            <p>TEST IMAGE</p>
+          </div>
+          <div className="card-title">
+            <h2>TEST TITLE</h2>
+          </div>
+          <div className="card-desc">
+            <p>TEST DesC</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
