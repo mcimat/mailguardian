@@ -12,7 +12,8 @@ function DomainSearch() {
   const KEY = "ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e";
 
   //Domain Search API Call
-  const getDomainSearch = () => {
+  const getDomainSearch = (e) => {
+    e.preventDefault()
     axios.get(`https://api.hunter.io/v2/domain-search?domain=${userDomain}&api_key=${KEY}`)
       .then((response) => {
         const emailData = response.data.data.emails;
@@ -49,7 +50,7 @@ function DomainSearch() {
         <div className="container-text">
           <p>Search any company.</p>
         </div>
-        <form className="form" onSumbit={getDomainSearch}>
+        <form className="form" onSubmit={getDomainSearch}>
           <div className="form-title">
             <p>Discover emails from the company.</p>
           </div>

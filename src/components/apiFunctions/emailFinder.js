@@ -29,9 +29,9 @@ function EmailFinder() {
           + " " +
           `First: ${first}, Last: ${last}`);
       })
-    .catch((error) => {
-      setError("Please enter a domain, first name and last name.");
-    });
+      .catch((error) => {
+        setError("Please enter a domain, first name and last name.");
+      });
   };
 
   return (
@@ -46,33 +46,33 @@ function EmailFinder() {
         <div className="container-text">
           <p>Find any email.</p>
         </div>
-          <form className="form" onSubmit={getEmailFinder}>
-            <p class="form-title">Track down that email you've been hunting for.</p>
-              <input
-                placeholder="Company.com"
-                class="form-input"
-                value={userDomain}
-                onChange={(e) => setUserDomain(e.target.value)}
-              />
-              <br />
-              <input
-                placeholder="First Name"
-                class="form-input"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-              <br />
-              <input
-                placeholder="Last Name"
-                class="form-input"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            <button type="submit" className="form-submit">Find Email</button>
-          </form>
-        </div>
+        <form className="form" onSubmit={getEmailFinder}>
+          <p class="form-title">Track down that email you've been hunting for.</p>
+          <input
+            placeholder="Company.com"
+            class="form-input"
+            value={userDomain}
+            onChange={(e) => setUserDomain(e.target.value)}
+          />
+          <br />
+          <input
+            placeholder="First Name"
+            class="form-input"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <br />
+          <input
+            placeholder="Last Name"
+            class="form-input"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <button type="submit" className="form-submit">Find Email</button>
+        </form>
         {<p className="error-text">{error}</p>}
         <div className="container-result">{emailFinder}</div>
+      </div>
     </section>
   );
 }

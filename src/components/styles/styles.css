@@ -172,6 +172,7 @@ span, .span-color {
   font-weight: 500;
   width: 100%;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .container-benefits {

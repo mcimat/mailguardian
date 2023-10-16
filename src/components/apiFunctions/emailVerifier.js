@@ -10,7 +10,8 @@ function EmailVerifier() {
   const KEY = "ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e";
 
   //Email Verifier API Call
-  const getEmailVerifier = () => {
+  const getEmailVerifier = (e) => {
+    e.preventDefault()
     axios.get(`https://api.hunter.io/v2/email-verifier?email=${userEmail}&api_key=${KEY}`)
       .then((response) => {
         const emailVerify = response.data.data;
