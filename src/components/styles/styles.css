@@ -27,7 +27,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   margin: 1rem 0;
 }
@@ -38,21 +38,41 @@ h4 {
   text-transform: uppercase;
 }
 
-.container-sentence {
+.container-sentence, .sentence-button {
   text-align: center;
   max-width: 30rem;
   margin: 0 auto;
 }
 
+.container-sentence {
+  margin-bottom: 1.25rem;
+}
+
+.sentence-button button {
+  cursor: pointer;
+  padding: .75rem 1rem;
+  background-color: #ee4758;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
 span, .span-color {
   font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.75;
 }
 
 .span-color {
   color: #ee4758;
+}
+
+.span-highlight {
+  background-color: rgba(238, 71, 88, 0.4);
 }
 
 .error-text {
@@ -101,9 +121,8 @@ span, .span-color {
 }
 
 .container-text {
-  font-weight: 400;
   font-size: 1.125rem;
-  color: #353935;
+  color: #62646c;
   line-height: 1.6;
   margin: 1rem 0;
 }
@@ -157,17 +176,37 @@ span, .span-color {
 
 .container-benefits {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
   place-items: center;
-  grid: auto / auto auto auto;
-  padding: 1rem;
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .benefits-card {
   background-color: #f5f5f7;
   border: solid white;
   border-radius: .5rem;
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-emoji {
+  font-size: 2.5rem;
+}
+
+.card-emoji p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.card-title h3 {
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+.card-desc {
+  font-size: 1.125rem;
+  max-width: 25ch;
 }
 
 .container-result {
@@ -194,25 +233,6 @@ span, .span-color {
   justify-content: center;
   align-items: center;
 }
-
-/* Questions Content */
-.questions-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Inter', sans-serif;
-  font-weight: 900;
-  margin: .5rem 0;
-  text-transform: uppercase;
-}
-
-.container-questions {
-  display: grid;
-  grid: auto / auto auto;
-  place-items: center;
-  gap: 2rem;
-}
-
 
 /* Footer Content */
 .container-footer {

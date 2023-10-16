@@ -1,13 +1,18 @@
 import Options from './components/options';
-// import Questions from './components/questions';
+import JoinOne from './components/joinOne';
+import Benefits from './components/benefits';
+import JoinTwo from './components/joinTwo';
+import Use from './components/use';
 import Footer from './components/footer';
 
 function App() {
-
   return (
     <div className="App">
       <Options />
-      {/* <Questions /> */}
+      <JoinOne />
+      <Benefits />
+      <JoinTwo />
+      <Use />
       <Footer />
     </div>
   );
