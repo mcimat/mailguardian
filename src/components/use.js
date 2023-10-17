@@ -1,3 +1,8 @@
+import leadImage from "./images/lead.png";
+import qualityImage from "./images/quality.png";
+import recruitmentImage from "./images/recruitment.png";
+import startupImage from "./images/startup.png";
+import securityImage from "./images/security.png";
 import "./styles/styles.css";
 
 function Use() {
@@ -13,32 +18,21 @@ function Use() {
             <div className="container-use">
                 <div className="use-card">
                     <div className="card-img">
-                        <h1>image</h1>
+                        <img src={qualityImage} alt="Quality Assurance" />
                     </div>
                     <div className="card-title">
-                        <h2>Sales</h2>
+                        <h2>Quality Assurance</h2>
                     </div>
                     <div className="card-desc">
-                        <p>Find qualified leads, follow up, and convert better using Snov.io tools.</p>
+                        <p>Enterprises that manage customer or contact databases can improve data quality and precision.</p>
                     </div>
                 </div>
                 <div className="use-card">
                     <div className="card-img">
-                        <h1>image</h1>
+                        <img src={recruitmentImage} alt="Recruitment" />
                     </div>
                     <div className="card-title">
-                        <h2>Lead Generation</h2>
-                    </div>
-                    <div className="card-desc">
-                        <p>Reach out to potential clients easier than ever. Multiple search features make it easy to find just the person you need.</p>
-                    </div>
-                </div>
-                <div className="use-card">
-                    <div className="card-img">
-                        <h1>image</h1>
-                    </div>
-                    <div className="card-title">
-                        <h2>Business Dev</h2>
+                        <h2>Recruitment</h2>
                     </div>
                     <div className="card-desc">
                         <p>Find people integral to your success: from investors and influencers to first clients and team members.</p>
@@ -46,24 +40,35 @@ function Use() {
                 </div>
                 <div className="use-card">
                     <div className="card-img">
-                        <h1>image</h1>
+                        <img src={securityImage} alt="Security" />
                     </div>
                     <div className="card-title">
-                        <h2>Outreach</h2>
+                        <h2>Security</h2>
                     </div>
                     <div className="card-desc">
-                        <p>Streamline your marketing by finding bloggers, journalists, influencers, and website owners, all within a single platform.</p>
+                        <p>Security professionals can leverage features to proactively mitigate phishing risks during procedures.</p>
                     </div>
                 </div>
                 <div className="use-card">
                     <div className="card-img">
-                        <h1>image</h1>
+                        <img src={startupImage} alt="Startups" />
                     </div>
                     <div className="card-title">
-                        <h2>Recruitment</h2>
+                        <h2>Startups</h2>
                     </div>
                     <div className="card-desc">
-                        <p>Discover your perfect candidate, no matter the industry. If they exist, Snov.io tools will help you find them.</p>
+                        <p>Resource-constrained startups can build contact lists for outreach and networking.</p>
+                    </div>
+                </div>
+                <div className="use-card">
+                    <div className="card-img">
+                        <img src={leadImage} alt="Lead Generation" />
+                    </div>
+                    <div className="card-title">
+                        <h2>Lead Generation</h2>
+                    </div>
+                    <div className="card-desc">
+                        <p>Connect with clients effortlessly. Our powerful search simplifies finding the right person.</p>
                     </div>
                 </div>
             </div>
