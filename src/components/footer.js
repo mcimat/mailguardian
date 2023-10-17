@@ -1,4 +1,5 @@
-import siteImage from './images/siteImage.png';
+import mailImage from './images/mail.png';
+import "./styles/styles.css";
 
 function Footer() {
     return (
@@ -6,7 +7,7 @@ function Footer() {
             <div className="container">
                 <div className="container-footer">
                     <div className="footer-info">
-                        <img src={siteImage} alt="MailGuardian Img" />
+                        <img src={mailImage} alt="MailGuardian Img" />
                     </div>
                     <div className="footer-content">
                         <h4>MailGuardian</h4>

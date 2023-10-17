@@ -47,24 +47,24 @@ function EmailFinder() {
           <p>Find any email.</p>
         </div>
         <form className="form" onSubmit={getEmailFinder}>
-          <p class="form-title">Track down that email you've been hunting for.</p>
+          <p className="form-title">Track down that email you've been hunting for.</p>
           <input
             placeholder="Company.com"
-            class="form-input"
+            className="form-input"
             value={userDomain}
             onChange={(e) => setUserDomain(e.target.value)}
           />
           <br />
           <input
             placeholder="First Name"
-            class="form-input"
+            className="form-input"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <br />
           <input
             placeholder="Last Name"
-            class="form-input"
+            className="form-input"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />

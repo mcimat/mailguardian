@@ -36,7 +36,7 @@ function EmailVerifier() {
           <p>Verify any email.</p>
         </div>
         <form className="form" onSubmit={getEmailVerifier}>
-          <p class="form-title">Uncover the validity of that email.</p>
+          <p className="form-title">Uncover the validity of that email.</p>
           <input
             placeholder="Email"
             className="form-input"
