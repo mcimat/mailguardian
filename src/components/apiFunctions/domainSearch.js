@@ -3,8 +3,6 @@ import axios from "axios";
 import "../styles/styles.css";
 
 function DomainSearch() {
-  const [error, setError] = useState(null);
-  const [domainSearch, setDomainSearch] = useState("");
   const [userDomain, setUserDomain] = useState("");
   const [emailData, setEmailData] = useState({ emails: [] });
 
@@ -13,32 +11,18 @@ function DomainSearch() {
 
   //Domain Search API Call
   const getDomainSearch = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    if (!userDomain) {
+      alert("Domain is empty. Please enter a domain.");
+    }
+
     axios.get(`https://api.hunter.io/v2/domain-search?domain=${userDomain}&api_key=${KEY}`)
       .then((response) => {
         const emailData = response.data.data.emails;
         setEmailData({ emails: emailData });
-
-        const domainSearch = response.data.data;
-        const organization = domainSearch.organization;
-        const industry = domainSearch.industry;
-
-        //Address Information
-        const postalCode = domainSearch.postal_code;
-        const state = domainSearch.state;
-        const street = domainSearch.street;
-
-        //Socials
-        const facebook = domainSearch.facebook;
-        const instagram = domainSearch.instagram;
-        const twitter = domainSearch.twitter;
-        const youtube = domainSearch.youtube;
-
-        setDomainSearch(`Organization: ${organization}, Industry: ${industry}, Address: ${street}, ${state}, ${postalCode}, Facebook: ${facebook}, Instagram: ${instagram}, Twitter: ${twitter}, YouTube: ${youtube}`);
-      })
-      .catch((error) => {
-        setError("Please enter a domain.");
-      });
+      }
+    );
   };
 
   return (
@@ -62,21 +46,17 @@ function DomainSearch() {
           />
           <button className="form-submit">Search</button>
         </form>
-        {<p className="error-text">{error}</p>}
-        <div className="container-result">{domainSearch}</div>
-        <ul className="container-ul">
-          {Array.isArray(emailData.emails) && emailData.emails.map((email, index) => {
-            return (
-              <li className="container-li" key={index}>
-                <span>
-                  <p className="container-result">Email: {email.value}</p>
-                  <p className="container-result">Name: {email.first_name} {email.last_name}</p>
-                  <p className="container-result">Confidence: {email.confidence}</p>
-                </span>
+        <div className="container-result">
+          <ul className="result-ul">
+            {emailData.emails.map((email, index) => (
+              <li className="result-li" key={index}>
+                <p className="result-bold">{email.first_name} {email.last_name}</p>
+                <p className="result">{email.value}</p>
+                <p className="result">Confidence: {email.confidence}%</p>
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

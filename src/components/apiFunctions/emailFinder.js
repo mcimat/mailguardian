@@ -4,7 +4,6 @@ import findImage from "../images/find.png"
 import "../styles/styles.css";
 
 function EmailFinder() {
-  const [error, setError] = useState(null);
   const [emailFinder, setEmailFinder] = useState("");
   const [userDomain, setUserDomain] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -13,9 +12,24 @@ function EmailFinder() {
   //API KEY
   const KEY = "ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e";
 
+  function checkEmptyInput(inputValue, errorMessage) {
+    if (!inputValue) {
+      alert(errorMessage);
+      return true;
+    }
+    return false;
+  }
+
   //Email Finder API Call
   const getEmailFinder = (e) => {
     e.preventDefault()
+
+    if (checkEmptyInput(userDomain, "Domain is empty. Please enter a domain.")
+      || checkEmptyInput(firstName, "First Name is empty. Please enter a first name.")
+      || checkEmptyInput(lastName, "Last Name is empty. Please enter a last name.")) {
+      return;
+    }
+
     axios.get(`https://api.hunter.io/v2/email-finder?domain=${userDomain}&first_name=${firstName}&last_name=${lastName}&api_key=${KEY}`)
       .then((response) => {
         const emailFinder = response.data.data;
@@ -28,10 +42,8 @@ function EmailFinder() {
         setEmailFinder(`Email Found: ${email}, Company: ${company}, Position: ${position}`
           + " " +
           `First: ${first}, Last: ${last}`);
-      })
-      .catch((error) => {
-        setError("Please enter a domain, first name and last name.");
-      });
+      }
+    );
   };
 
   return (
@@ -70,7 +82,6 @@ function EmailFinder() {
           />
           <button type="submit" className="form-submit">Find Email</button>
         </form>
-        {<p className="error-text">{error}</p>}
         <div className="container-result">{emailFinder}</div>
       </div>
     </section>

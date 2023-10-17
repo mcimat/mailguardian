@@ -12,18 +12,19 @@ function EmailVerifier() {
   //Email Verifier API Call
   const getEmailVerifier = (e) => {
     e.preventDefault()
+
+    if (!userEmail) {
+      alert("Email is empty. Please enter an email address.");
+      return;
+    }
+
     axios.get(`https://api.hunter.io/v2/email-verifier?email=${userEmail}&api_key=${KEY}`)
       .then((response) => {
         const emailVerify = response.data.data;
-        const status = emailVerify.status;
-        const result = emailVerify.result;
-        const score = emailVerify.score;
-        const email = emailVerify.email;
 
-        setEmailVerifier(`Status: ${status}, Result: ${result}, Score: ${score}`
-          + " " +
-          `Entered Email: ${email}`);
-      })
+        setEmailVerifier(emailVerify);
+      }
+    );
   };
 
   return (
@@ -45,7 +46,23 @@ function EmailVerifier() {
           />
           <button className="form-submit">Verify Email</button>
         </form>
-        <div className="container-result">{emailVerifier}</div>
+        <div className="container-result">
+          <div className="result-box">
+            <div className="continer-name">
+              <span></span>
+              <span className="result-bold">{emailVerifier.email}</span>
+              <span className="result">{emailVerifier.score}</span>
+            </div>
+          </div>
+          {/* <div className="result-data">
+            <div className="rows">
+              <p className="result">Server status: {emailVerifier.status}</p>
+            </div>
+            <div className="rows">
+              <p className="result">Email status: {emailVerifier.result}</p>
+            </div>
+          </div> */}
+        </div>
       </div>
     </section>
   );
