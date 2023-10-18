@@ -83,7 +83,7 @@ h3 {
   margin: 1rem 0;
 }
 
-/* Form Content*/
+/* Form Content */
 .form {
   display: block;
   padding: 1rem;
@@ -134,7 +134,7 @@ h3 {
   cursor: pointer;
 }
 
-/* Result Content*/ 
+/* Result Content */ 
 .container-result {
   display: flex;
   flex-direction: row;
@@ -164,8 +164,6 @@ h3 {
   grid-template-columns: auto auto;
   padding: 1rem;
   width: 100%;
-  /* margin-top: 2rem; */
-  /* border: 0.063rem #DFE3E8 solid; */
   gap:2rem;
 }
 
@@ -212,12 +210,14 @@ h3 {
 }
 
 .container-sentence {
+  margin-top: 5rem;
   margin-bottom: 1.25rem;
 }
 
 .sentence-button button {
   cursor: pointer;
   padding: .75rem 1rem;
+  margin-bottom: 16rem;
   background-color: #ee4758;
   color: #ffffff;
   font-size: 0.875rem;
@@ -229,7 +229,7 @@ h3 {
 
 span, .span-color {
   font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.75;
 }
@@ -278,6 +278,11 @@ span, .span-color {
 }
 
 /* Use Content */
+.use-title {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
 .use-title span {
   font-size: 1.875rem;
   font-weight: 700;
@@ -291,6 +296,7 @@ span, .span-color {
   padding: 2rem;
   gap: 2rem;
   max-width: 100rem;
+  margin-bottom: 6rem;
 }
 
 .use-card {
@@ -354,4 +360,217 @@ span, .span-color {
   padding: 2rem;
   list-style: none;
   transition: color 0.3s ease;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* General Content */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  /* Function Buttons */
+  .button-list button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Main Buttons */
+  .container {
+    padding: 1rem 2rem;
+  }
+
+  /* Form Content */
+  .form-input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .form-submit {
+    font-size: 1rem;
+    padding: 0.625rem;
+  }
+
+  /* Result Content */
+  .result-title, .result {
+    font-size: 1rem;
+  }
+
+  .result-name, .result-data, .result-li {
+    padding: 0.5rem;
+  }
+
+  /* Benefits Content */
+  .container-benefits {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .container-benefits .benefits-card {
+    padding: 1.75rem;
+  }
+
+  .benefits-title h2, .benefits-desc {
+    font-size: 1rem;
+  }
+
+  /* Use Content */
+  .use-title {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-desc {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  /* Footer Content */
+  .container-footer p {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* General Content */
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+  }
+
+  h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+  }
+
+  /* Function Buttons */
+  .button-list {
+    flex-direction: row;
+  }
+
+  .button-list button {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Main Content */
+  .container {
+    padding: 1rem;
+  }
+
+  /* Form Content */
+  .form-input {
+    width: 100%; 
+    font-size: 0.875rem; 
+  }
+
+  /* Result Content */
+  .container-result {
+    margin-top: 1rem;
+  }
+
+  .result-box {
+    margin-top: 1rem;
+  }
+
+  .result-name {
+    padding: 0.5rem;
+  }
+
+  .result-data {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .result-ul {
+    margin-top: 1rem;
+  }
+
+  .result-li {
+    padding: 0.5rem;
+  }
+
+  .result-title {
+    font-size: 0.875rem;
+  }
+
+  .result {
+    font-size: 0.875rem;
+  }
+
+  /* Join 1 & 2 Content */
+  .sentence-button button {
+    margin-bottom: 12rem;
+  }
+
+  span, .span-color {
+    font-size: 1.125rem;
+  }
+
+  /* Benefits Content */
+  .container-benefits {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .benefits-card {
+    padding: 2rem;
+  }
+
+  .benefits-emoji p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .benefits-title h2 {
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .benefits-desc {
+    font-size: 0.875rem;
+  }
+
+  /* Use Content */
+  .use-title {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  .container-use {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .use-card {
+    padding: 1rem;
+  }
+
+  /* Footer Content */
+  .container-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-info img {
+    display: none;
+  }
+
+  .footer-content {
+    font-size: 0.875rem;
+  }
 }

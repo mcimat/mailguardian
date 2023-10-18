@@ -16,10 +16,10 @@ function Footer() {
                         <p>Become a Partner</p>
                     </div>
                     <div className="footer-content">
-                        <h4>Tools</h4>
-                        <p>Email Verifier</p>
-                        <p>Email Finder</p>
-                        <p>Domain Search</p>
+                        <h4>Company</h4>
+                        <p>Team</p>
+                        <p>Affiliate Program</p>
+                        <p>Bug Bounty</p>
                     </div>
                     <div className="footer-content">
                         <h4>Legal</h4>
