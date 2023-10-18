@@ -10,7 +10,7 @@ function Use() {
         <section>
             <div className="container">
                 <div className="use-title">
-                    <span>Who uses </span>
+                    <span>Why use </span>
                     <span className="span-color">MailGuardian</span>
                     <span>?</span>
                 </div>

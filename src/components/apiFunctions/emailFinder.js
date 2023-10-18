@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import findImage from "../images/find.png"
 import "../styles/styles.css";
 
 function EmailFinder() {
@@ -8,6 +7,7 @@ function EmailFinder() {
   const [userDomain, setUserDomain] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   //API KEY
   const KEY = "ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e";
@@ -33,15 +33,8 @@ function EmailFinder() {
     axios.get(`https://api.hunter.io/v2/email-finder?domain=${userDomain}&first_name=${firstName}&last_name=${lastName}&api_key=${KEY}`)
       .then((response) => {
         const emailFinder = response.data.data;
-        const email = emailFinder.email;
-        const company = emailFinder.company;
-        const position = emailFinder.position;
-        const first = emailFinder.first_name;
-        const last = emailFinder.last_name;
-
-        setEmailFinder(`Email Found: ${email}, Company: ${company}, Position: ${position}`
-          + " " +
-          `First: ${first}, Last: ${last}`);
+        setEmailFinder(emailFinder);
+        setFormSubmitted(true);
       }
     );
   };
@@ -49,9 +42,6 @@ function EmailFinder() {
   return (
     <section>
       <div className="container">
-        <div className="container-image">
-          <img src={findImage} alt="Find Img" />
-        </div>
         <div className="container-title">
           <h1 className="h1-color">Email Finder</h1>
         </div>
@@ -82,7 +72,18 @@ function EmailFinder() {
           />
           <button type="submit" className="form-submit">Find Email</button>
         </form>
-        <div className="container-result">{emailFinder}</div>
+        {formSubmitted && (
+          <div className="container-result">
+            <div className="result-box">
+              <div className="result-name">
+                <p className="result-bold">{emailFinder.first_name} {emailFinder.last_name}</p>
+                <p className="result">{emailFinder.email}</p>
+                <p className="result">{emailFinder.position}</p>
+                <p className="result">Score: {emailFinder.score}%</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

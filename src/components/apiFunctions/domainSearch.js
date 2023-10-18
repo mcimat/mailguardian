@@ -5,6 +5,7 @@ import "../styles/styles.css";
 function DomainSearch() {
   const [userDomain, setUserDomain] = useState("");
   const [emailData, setEmailData] = useState({ emails: [] });
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   //API KEY
   const KEY = "ebaec51e7fdde3fc15a0ab2dbfe22e0c3ea60d2e";
@@ -15,12 +16,14 @@ function DomainSearch() {
 
     if (!userDomain) {
       alert("Domain is empty. Please enter a domain.");
+      return;
     }
 
     axios.get(`https://api.hunter.io/v2/domain-search?domain=${userDomain}&api_key=${KEY}`)
       .then((response) => {
         const emailData = response.data.data.emails;
         setEmailData({ emails: emailData });
+        setFormSubmitted(true);
       }
     );
   };
@@ -46,17 +49,19 @@ function DomainSearch() {
           />
           <button className="form-submit">Search</button>
         </form>
-        <div className="container-result">
-          <ul className="result-ul">
-            {emailData.emails.map((email, index) => (
-              <li className="result-li" key={index}>
-                <p className="result-bold">{email.first_name} {email.last_name}</p>
-                <p className="result">{email.value}</p>
-                <p className="result">Confidence: {email.confidence}%</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {formSubmitted && (
+          <div className="container-result">
+            <ul className="result-ul">
+              {emailData.emails.map((email, index) => (
+                <li className="result-li" key={index}>
+                  <p className="result-bold">{email.first_name} {email.last_name}</p>
+                  <p className="result">{email.value}</p>
+                  <p className="result">Confidence: {email.confidence}%</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );
